@@ -34,17 +34,8 @@ var perdu;
 //Vérifie si le resultat de la position de la forme va etre possible
 function check( xBis, yBis, varTemp,booleen ) {
   
-	if ( typeof xBis == "undefined"){
-		xBis=0;
-	}//
- 
-	if( typeof yBis =="undefined"){
-		yBis=0;
-	}
-    
-	if( typeof varTemp=="undefined"){
-		varTemp=tempShape;
-	}
+	test1();
+
 	 xBis = tempShapeX + xBis;
      yBis = tempShapeY + yBis;
 
@@ -54,37 +45,65 @@ function check( xBis, yBis, varTemp,booleen ) {
         for ( var x = 0; x < 4;x++ ) {
         
 		if ( varTemp[ y ][ x ] ) {
-                //Pour évité de passer à travers la bordure droite du rectangle
-				if ( typeof array[ y + yBis ] == "undefined"){ //https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/undefined
-                    if (yBis == 1){ 
-							perdu = true;
-					}// perdu 
-					booleen=false;
-                    return booleen;
-					}
-				//pour évité de passer à travers la bordure Gauche du rectangle
-                if( typeof array[ y + yBis ][ x + xBis ] == "undefined"){ //https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/undefined
-                     if (yBis == 1){ 
-							perdu = true;
-					}// perdu
-                    booleen=false;
-					return booleen;
-                }
-				// permet que le pièce ne se passe pas au travers
-               if( array[ y + yBis ][ x + xBis ]){
-                     if (yBis == 1){ 
-							perdu = true;
-					}// perdu
-                    booleen=false;
-					return booleen;
-                } 			
-			}
-			}
+
+            doSomething();
+               			
+		}
+		}
 			
-            }
+        }
         
     booleen=true;
     return booleen;
+}
+
+
+function doSomething(){
+
+ //Pour évité de passer à travers la bordure droite du rectangle
+                if ( typeof array[ y + yBis ] == "undefined"){ //https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/undefined
+                    if (yBis == 1){ 
+                            perdu = true;
+                    }// perdu 
+                    booleen=false;
+                    return booleen;
+                    }
+                //pour évité de passer à travers la bordure Gauche du rectangle
+                if( typeof array[ y + yBis ][ x + xBis ] == "undefined"){ //https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/undefined
+                     if (yBis == 1){ 
+                            perdu = true;
+                    }// perdu
+                    booleen=false;
+                    return booleen;
+                }
+                // permet que le pièce ne se passe pas au travers
+               if( array[ y + yBis ][ x + xBis ]){
+                     if (yBis == 1){ 
+                            perdu = true;
+                    }// perdu
+                    booleen=false;
+                    return booleen;
+                } 
+
+}
+
+
+
+function test1(){
+
+if ( typeof xBis == "undefined"){
+        xBis=0;
+    }//
+ 
+    if( typeof yBis =="undefined"){
+        yBis=0;
+    }
+    
+    if( typeof varTemp=="undefined"){
+        varTemp=tempShape;
+    }
+
+
 }
 //fonction du tp2 
 function rewrite(score){
@@ -157,8 +176,8 @@ function testeur2(){
         for (x=0; x<4; x++){
             if ( tempShape[y][x]){
                 array[ y+ tempShapeY][x +tempShapeX]= tempShape[y][x];
-                }
             }
+        }
         }
 }
 
