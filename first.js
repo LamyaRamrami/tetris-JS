@@ -154,17 +154,26 @@ function testeur() {
         }
     }
 		//gestion du cas ou la partie est perdu
-        if (perdu==true) {
-			score=0;
-			alert('Vous avez perdu la partie, appuyez sur OK pour commencer une autre');
-			rewrite(score);
-			lanceurDePartie();//lance une nouvelle partie
-			perdu=false;
-            return perdu;
-        }
+        PartiePerdu();
+       
         nouvelleForme(); // Génère une nouvelle forme
     }
 	
+}
+
+
+
+function PartiePerdu() {
+
+            if (perdu==true) { 
+                    score=0;
+                    alert('Vous avez perdu la partie, appuyez sur OK pour commencer une autre');
+                    rewrite(score);
+                    lanceurDePartie();//lance une nouvelle partie
+                    perdu=false;
+                return perdu;
+        }
+
 }
 
 function lanceurDePartie() {
