@@ -123,25 +123,13 @@ function testeur() {
     }
     
     else {
+
+        testeur2();
 		
-		// stop la forme dans la position actuel et la fixe
-        //pose la pièce
-		for (y=0; y<4;y++){
-        for (x=0; x<4; x++){
-            if ( tempShape[y][x]){
-                array[ y+ tempShapeY][x +tempShapeX]= tempShape[y][x];
-            }
-        }
     }
  //Boucle for pour l'effacement de ligne
-		for (y =ligne-1;y >= 0;y--){
-        var lignePleine =true;
-        for (x = 0; x<colonne;x++ ) {
-            if ( array[y][x]==0) {
-                lignePleine =false;
-                //break;
-            }
-        }
+        testeur3();
+
         if(lignePleine==true){
            score++;
             for(yBis= y; yBis>0; yBis--) {
@@ -161,6 +149,32 @@ function testeur() {
 	
 }
 
+function testeur2(){
+
+        // stop la forme dans la position actuel et la fixe
+        //pose la pièce
+        for (y=0; y<4;y++){
+        for (x=0; x<4; x++){
+            if ( tempShape[y][x]){
+                array[ y+ tempShapeY][x +tempShapeX]= tempShape[y][x];
+                }
+            }
+        }
+}
+
+function testeur3() {
+
+
+        for (y =ligne-1;y >= 0;y--){
+        var lignePleine =true;
+        for (x = 0; x<colonne;x++ ) {
+            if ( array[y][x]==0) {
+                lignePleine =false;
+                //break;
+            }
+        }
+        }
+}
 
 
 function PartiePerdu() {
