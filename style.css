@@ -1,0 +1,23 @@
+canvas {
+    display: block;
+    margin: auto;
+    border: 2px solid red;
+}
+#score,#texte{
+	font-size: 80%;
+	font-weight: bolder;
+	text-align : center;
+	 color : blue;
+}
+#consigne{
+	font-weight: bolder;
+	text-align : center;
+	font-size: 80%;
+	 color : deepblue;
+}
+h1{
+	font-family : Monotype Corsiva;
+	font-weight: bolder;
+	text-align : center;
+	 color : darkred;
+}
